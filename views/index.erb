@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Caesar Cipher</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        font-family: monospace;
+        background-color: black;
+        color: white;
+      }
+      form {
+        row-gap: 10px;
+        display: grid;
+        height: 200px;
+        grid-template-areas:
+          ". message ."
+          ". shift ."
+          ". submit .";
+        grid-template-columns: 25% 50% 25%;
+        grid-template-rows: 50% 10% 10%;
+      }
+      
+      #message {
+        grid-area: message;
+        resize: none;
+      }
+      #shift {
+        grid-area: shift;
+      }
+      #submit {
+        grid-area: submit;
+      }
+      h2, #encrypted {
+        margin-left:25%;
+        width: 50%;
+        text-align:center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Caesar Cipher</h2>
+    <form>
+      <textarea id="message" type="text" name="message">What are you hiding?</textarea>
+      <input id="shift" type="number" min="1" max="25" name="shift" />
+      <input id="submit" type="submit" value="Encrypt">
+    </form>
+    <div id="encrypted">
+      <% if !shifted.nil? %>
+        Your hidden message: 
+        <%= shifted %>
+      <% end %>
+    </div>
+  </body>
+</html>
